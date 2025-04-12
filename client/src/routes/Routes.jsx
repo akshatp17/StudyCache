@@ -1,6 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Suspense } from 'react';
 import ProtectedRoute from './ProtectedRoutes';
+import MainLayout from '../layout/MainLayout';
+import Loading from '../pages/Loading';
+
+const Home = React.lazy(() => import('../pages/Home'));
 
 const AppRoutes = () => {
     return (
@@ -11,7 +16,6 @@ const AppRoutes = () => {
 
                         {/* Normal Routes : Unprotected Routes */}
                         <Route path="/" element={<Home />} />
-                        <Route path="/about" element={<About />} />
 
                         {/* Protected Routes */}
                     </Route>

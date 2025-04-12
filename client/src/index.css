@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+  --color-blue-ribbon-50: #eef8ff;
+  --color-blue-ribbon-100: #d9efff;
+  --color-blue-ribbon-200: #bbe3ff;
+  --color-blue-ribbon-300: #8cd3ff;
+  --color-blue-ribbon-400: #56b9ff;
+  --color-blue-ribbon-500: #2f98ff;
+  --color-blue-ribbon-600: #1979f7;
+  --color-blue-ribbon-700: #1266ed;
+  --color-blue-ribbon-800: #154fb8;
+  --color-blue-ribbon-900: #174691;
+  --color-blue-ribbon-950: #132b58;
+}
