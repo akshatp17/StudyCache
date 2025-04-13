@@ -13,3 +13,7 @@
   --color-blue-ribbon-900: #174691;
   --color-blue-ribbon-950: #132b58;
 }
+
+html {
+  scroll-behavior: smooth;
+}

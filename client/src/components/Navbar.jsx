@@ -22,7 +22,15 @@ const Navbar = () => {
                 <Link to="/resources" className='mx-4 hover:text-[#1266ed]'>Resources</Link>
                 <Link to="/upload" className='mx-4 hover:text-[#1266ed]'>Upload</Link>
                 <Link to="/request" className='mx-4 hover:text-[#1266ed]'>Request</Link>
-                <Link to="/contribute" className='mx-4 hover:text-[#1266ed]'>Contribute</Link>
+                <span
+                    className='mx-4 hover:text-[#1266ed] cursor-pointer'
+                    onClick={() => {
+                        navigate('/', { state: { scrollTo: 'contribute' } });
+                    }}
+                >
+                    Contribute
+                </span>
+
             </div>
             {/* Github Repo Star */}
             <div className='flex flex-col justify-center items-center'>

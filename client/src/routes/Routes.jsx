@@ -5,6 +5,7 @@ import ProtectedRoute from './ProtectedRoutes';
 import MainLayout from '../layout/MainLayout';
 import Loading from '../pages/Loading';
 import Error from '../pages/Error';
+import Disclaimer from '../pages/Disclaimer';
 
 const Home = React.lazy(() => import('../pages/Home'));
 
@@ -20,6 +21,7 @@ const AppRoutes = () => {
 
                         {/* Normal Routes : Unprotected Routes */}
                         <Route path="/" element={<Home />} />
+                        <Route path="/policy" element={<Disclaimer />} />
 
                         {/* Protected Routes */}
                     </Route>

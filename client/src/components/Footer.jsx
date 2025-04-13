@@ -19,11 +19,8 @@ const Footer = () => {
                 <span> & Others Talented Contributers⭐ </span>
             </p>
             <nav className="flex gap-4 sm:gap-6">
-                <Link className="text-xs hover:text-blue-ribbon-400 transition-colors" href="#">
-                    Terms of Service
-                </Link>
-                <Link className="text-xs hover:text-blue-ribbon-400 transition-colors" href="#">
-                    Privacy
+                <Link className="text-xs hover:text-blue-ribbon-400 transition-colors" to={"/policy"}>
+                    Disclaimer
                 </Link>
             </nav>
         </footer>
