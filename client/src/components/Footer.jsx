@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-border/40 justify-between">
+        <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t justify-between border-gray-300">
             <p className="text-xs text-muted-foreground">
                 &copy; {new Date().getFullYear()} StudyCache. All rights reserved.
             </p>
-            <p className='text-xs text-muted-foreground twxt-center w-auto'>
+            <p className='text-sm text-muted-foreground twxt-center w-auto'>
                 <span>Created by </span>
                 <a
                     className='text-blue-ribbon-600 cursor-pointer'
