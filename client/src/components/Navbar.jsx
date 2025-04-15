@@ -8,7 +8,7 @@ const Navbar = () => {
         navigate('/'); // Navigate to the home page
     }
     return (
-        <nav className='w-full py-2 px-3 flex justify-between items-center border-b-2 border-gray-300 text-lg sticky top-0 bg-[#fffffff9]'>
+        <nav className='w-full py-2 px-6 flex justify-between items-center border-b-2 border-gray-300 text-lg sticky top-0 bg-[#fffffff9]'>
             {/* Left Section of the Navbar */}
             <div
                 className='font-bold text-2xl hover:cursor-pointer text-[#1266ed] hover:text-[#154fb8] transition flex items-center justify-center'
