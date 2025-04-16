@@ -1,10 +1,9 @@
 import React from 'react'
+import UploadForm from './form/UploadForm'
 
 const Upload = () => {
     return (
-        <div>
-
-        </div>
+        <UploadForm />
     )
 }
 
