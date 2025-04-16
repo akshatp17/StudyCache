@@ -1,14 +1,27 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Alert from '../../components/Alert';
 
 const UploadForm = () => {
+    const [alert, setAlert] = useState({ show: false, type: '', message: '' });
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [pdfURL, setPdfURL] = useState(null);
 
     const handleSendRequest = (data) => {
-        console.log(data);
-        resetForm();  // Reset the form after submission
+        try {
+            console.log(data); // Simulate successful submission
+            setAlert({ show: true, type: 'success', message: 'Submitted successfully!' });
+            resetForm();
+        } catch (err) {
+            setAlert({ show: true, type: 'error', message: 'Error in submission. Please try again.' });
+        }
+
+        // Optional: Auto close after 3 seconds
+        setTimeout(() => {
+            setAlert({ show: false, type: '', message: '' });
+        }, 3000);
     };
+
 
     const handlePdfChange = (e) => {
         const file = e.target.files[0];
@@ -30,6 +43,10 @@ const UploadForm = () => {
 
     return (
         <div className="flex justify-center items-center py-5 px-5 bg-[#f6faff]">
+            {alert.show && (
+                <Alert type={alert.type} message={alert.message} onClose={() => setAlert({ show: false })} />
+            )}
+
             <form
                 method="post"
                 onSubmit={handleSubmit(handleSendRequest)}

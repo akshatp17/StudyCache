@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Alert from '../../components/Alert';
 
 const RequestForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [alert, setAlert] = useState({ show: false, type: '', message: '' });
 
     const handleSendRequest = (data) => {
-        console.log(data);
-        resetForm();  // Reset the form after submission
+        try {
+            console.log(data); // Simulate successful submission
+            setAlert({ show: true, type: 'success', message: 'Submitted successfully!' });
+            resetForm();
+        } catch (err) {
+            setAlert({ show: true, type: 'error', message: 'Error in submission. Please try again.' });
+        }
+
+        // Optional: Auto close after 3 seconds
+        setTimeout(() => {
+            setAlert({ show: false, type: '', message: '' });
+        }, 3000);
     };
 
     const resetForm = () => {
@@ -18,6 +30,11 @@ const RequestForm = () => {
 
     return (
         <div className="flex justify-center items-center py-5 px-5 bg-[#f6faff]">
+            {/* Alert */}
+            {alert.show && (
+                <Alert type={alert.type} message={alert.message} onClose={() => setAlert({ show: false })} />
+            )}
+
             <form
                 method="post"
                 id='requestForm'
