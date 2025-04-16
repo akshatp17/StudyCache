@@ -16,6 +16,11 @@ const Home = () => {
                 window.history.replaceState({}, document.title);
             }
         }
+        if (location.state?.scrollTo === 'homeStart') {
+            // Scroll to very top of the page instead of the section
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.history.replaceState({}, document.title);
+        }
     }, [location]);
 
     return (

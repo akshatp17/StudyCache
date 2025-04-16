@@ -10,7 +10,7 @@ const Navbar = () => {
     const closeMenu = () => setMenuOpen(false);
 
     return (
-        <nav className='w-full py-2 px-6 flex justify-between items-center border-b-2 border-gray-300 text-lg sticky top-0 bg-white z-50'>
+        <nav className='w-full py-2 px-6 flex justify-between items-center border-b-2 border-gray-300 text-lg sticky top-0 bg-[#fffffff9] z-50'>
             {/* Left: Logo */}
             <div
                 className='font-bold text-2xl hover:cursor-pointer text-[#1266ed] hover:text-[#154fb8] transition flex items-center justify-center'
@@ -24,7 +24,14 @@ const Navbar = () => {
 
             {/* Middle: Nav Links (Desktop) */}
             <div className='hidden md:flex gap-6 font-semibold'>
-                <Link to="/" className='hover:text-[#1266ed]'>Home</Link>
+                <span
+                    className='hover:text-[#1266ed] cursor-pointer'
+                    onClick={() => {
+                        navigate('/', { state: { scrollTo: 'homeStart' } });
+                    }}
+                >
+                    Home
+                </span>
                 <Link to="/resources" className='hover:text-[#1266ed]'>Resources</Link>
                 <Link to="/upload" className='hover:text-[#1266ed]'>Upload</Link>
                 <Link to="/request" className='hover:text-[#1266ed]'>Request</Link>
@@ -63,7 +70,14 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {menuOpen && (
                 <div className='absolute top-full left-0 w-full bg-white border-t border-gray-300 shadow-md flex flex-col px-6 py-4 space-y-4 md:hidden z-40'>
-                    <Link to="/" onClick={closeMenu} className='hover:text-[#1266ed]'>Home</Link>
+                    <span
+                        className='hover:text-[#1266ed] cursor-pointer'
+                        onClick={() => {
+                            navigate('/', { state: { scrollTo: 'homeStart' } });
+                        }}
+                    >
+                        Home
+                    </span>
                     <Link to="/resources" onClick={closeMenu} className='hover:text-[#1266ed]'>Resources</Link>
                     <Link to="/upload" onClick={closeMenu} className='hover:text-[#1266ed]'>Upload</Link>
                     <Link to="/request" onClick={closeMenu} className='hover:text-[#1266ed]'>Request</Link>
